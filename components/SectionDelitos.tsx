@@ -27,8 +27,7 @@ const delitos = [
     title: "Ciberdelitos",
     items: [
       "Estafas online",
-      "Suplantación de identidad",
-      "Accesos indebidos",
+      "Fraude informático",
     ],
   },
   {
@@ -45,13 +44,11 @@ const SectionDelitos = () => {
   return (
     <section id="delitos" className="section-dark section-spacing">
       <div className="container-main">
-        {/* Header */}
         <div className="mb-16">
           <p className="section-label">Delitos que trabajamos</p>
           <h2 className="section-title">Especialización en delitos complejos</h2>
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {delitos.map((delito, index) => (
             <div key={index} className="service-card">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, Instagram } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,20 +8,20 @@ const Header = () => {
     { href: "#inicio", label: "Inicio" },
     { href: "#penal", label: "Penal" },
     { href: "#delitos", label: "Delitos" },
-    { href: "#empresas", label: "Empresas" },
+    { href: "#empresas", label: "Penal Económico" },
+    { href: "#equipo", label: "Equipo" },
     { href: "#contacto", label: "Contacto" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 section-dark">
+    <header className="fixed top-0 left-0 right:0 right-0 z-50 section-dark border-b border-border/20 backdrop-blur-sm">
       <div className="container-main">
         <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Wordmark */}
-          <a href="#inicio" className="wordmark text-lg md:text-xl">
-            MEGLIO & CHEMEZ
+
+          <a href="#inicio" className="wordmark text-lg tracking-widest uppercase font-serif font-semibold text-foreground">
+            MEGLIO &amp; CHEMEZ
           </a>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} className="nav-link">
@@ -30,19 +30,23 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <span className="text-xs text-muted-foreground">24 hs</span>
             <a
-              href="tel:+543435032674"
-              className="btn-cta-primary text-sm px-6 py-3"
+              href="https://www.instagram.com/meglioabogado"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Instagram"
             >
+              <Instagram className="w-4 h-4" />
+            </a>
+            <span className="text-xs text-muted-foreground tracking-wider">24 hs</span>
+            <a href="tel:+543435032674" className="btn-cta-primary text-sm px-6 py-3">
               <Phone className="w-4 h-4" />
               Llamá ahora
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -53,7 +57,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden section-dark border-t border-border/20">
           <div className="container-main py-6">
@@ -71,12 +74,18 @@ const Header = () => {
             </nav>
             <div className="flex flex-col gap-3">
               <span className="text-xs text-muted-foreground">Atención 24 hs</span>
-              <a
-                href="tel:+543435032674"
-                className="btn-cta-primary justify-center"
-              >
+              <a href="tel:+543435032674" className="btn-cta-primary justify-center">
                 <Phone className="w-4 h-4" />
                 Llamá ahora
+              </a>
+              <a
+                href="https://www.instagram.com/meglioabogado"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+                @meglioabogado
               </a>
             </div>
           </div>
