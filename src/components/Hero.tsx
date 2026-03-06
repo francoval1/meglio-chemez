@@ -5,9 +5,12 @@ const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Foto de socios como fondo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroSocios})` }}
+      <img
+        src={heroSocios}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center 15%" }}
       />
 
       {/* Overlay: gradiente más oscuro arriba para legibilidad del header, más suave abajo */}
