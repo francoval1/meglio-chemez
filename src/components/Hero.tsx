@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Foto de socios como fondo */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat"
         style={{ backgroundImage: `url(${heroSocios})` }}
       />
 
